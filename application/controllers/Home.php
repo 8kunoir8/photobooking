@@ -16,7 +16,6 @@ class Home extends CI_Controller {
 
 	public function index() {
 		$this->layout->defaultPage('pages/dashboard');
-		// testing 
 	}
 
 	//ADMIN
