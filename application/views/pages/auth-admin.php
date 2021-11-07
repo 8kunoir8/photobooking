@@ -17,11 +17,8 @@
                       </tr>
                       <tr>
                         <th>No</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
+                        <th>Nama</th>
                         <th>Password</th>
-                        <th>Level</th>
-                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -29,14 +26,11 @@
                       <?php $i=1; foreach($content->result() as $con): ?>
                       <tr>
                         <td><?php echo $i++ ?></td>
-                        <td><?php echo $con->fullname ?></td>
-                        <td><?php echo $con->username ?></td>
-                        <td><?php echo $con->password ?></td>
-                        <td><?php echo $con->level ?></td>
-                        <td><?php echo $con->status ?></td>
+                        <td><?php echo $con->nama ?></td>
+                        <td><?php echo $con->kata_sandi ?></td>
                         <td align="center">
-                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->idAdmin ?>">Edit</a> 
-                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delAd').'/'.$con->idAdmin ?>">Delete</a>
+                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->id_admin ?>">Edit</a> 
+                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delAd').'/'.$con->id_admin ?>">Delete</a>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -61,25 +55,12 @@
                 <div class="modal-body">
                   <form role="form" action="<?php echo base_url('newAd') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="fullname">Full Name : </label>
-                      <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Full Name" required="" />
-                    </div>
-                    <div class="form-group">
                       <label for="username">Username : </label>
                       <input id="username" name="username" type="text" class="form-control" placeholder="Username" required="" />
                     </div>
                     <div class="form-group">
                       <label for="password">Password : </label>
                       <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="level">Level : </label>
-                      <select id="level" name="level" class="form-control" required>
-                          <option value="">Choose..</option>
-                          <option value="0">High</option>
-                          <option value="1">Mid</option>
-                          <option value="2">Low</option>
-                        </select>
                     </div>
                     <div class="form-group">
                       <button name="submit-newAd" id="submit-newAd" type="submit" class="btn btn-default submit">Submit</button>
@@ -106,27 +87,14 @@
                   <h4 class="modal-title">Edit Admin</h4>
                 </div>
                 <div class="modal-body">
-                  <form role="form" action="<?php echo base_url('edAd').'/'.$con->idAdmin ?>" method="post">
-                    <div class="form-group">
-                      <label for="fullname">Full Name : </label>
-                      <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Full Name" required="" />
-                    </div>
+                  <form role="form" action="<?php echo base_url('edAd').'/'.$con->id_admin ?>" method="post">
                     <div class="form-group">
                       <label for="username">Username : </label>
-                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" required="" />
+                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" value="<?php echo $con->nama ?>" required="" />
                     </div>
                     <div class="form-group">
                       <label for="password">Password : </label>
-                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="level">Level : </label>
-                      <select id="level" name="level" class="form-control" required>
-                          <option value="">Choose..</option>
-                          <option value="0">High</option>
-                          <option value="1">Mid</option>
-                          <option value="2">Low</option>
-                        </select>
+                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" value="<?php echo md5($con->kata_sandi) ?>" required="" />
                     </div>
                     <div class="form-group">
                       <button name="submit-edAd" id="submit-edAd" type="submit" class="btn btn-default submit">Submit</button>

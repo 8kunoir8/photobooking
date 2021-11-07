@@ -16,7 +16,7 @@
                 <span class="fa fa-square"></span> Jumlah Jenis Dinamo : 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get('jenis')->num_rows() ?>
+                <?php echo $this->db->get('admin')->num_rows() ?>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
                 <span class="fa fa-square"></span> Jumlah Customer : 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get('user')->num_rows() ?>
+                <?php echo $this->db->get('admin')->num_rows() ?>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
                 <span class="fa fa-square"></span> Jumlah Pengajuan Analisa Kerusakan : 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get('consul')->num_rows() ?>
+                <?php echo $this->db->get('admin')->num_rows() ?>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
                 <span class="fa fa-square"></span> Jumlah Pengajuan Analisa Kerusakan yang Belum di Analisa : 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get_where('consul',array('analisa'=>NULL))->num_rows() ?>
+                <?php //echo $this->db->get_where('consul',array('analisa'=>NULL))->num_rows() ?>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
                 <span class="fa fa-square"></span> Jumlah Pengajuan Perbaikan : 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get('perbaikan')->num_rows() ?>
+                <?php //echo $this->db->get('perbaikan')->num_rows() ?>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
                 <span class="fa fa-square"></span> Jumlah Pengajuan Perbaikan yang Belum Diterima: 
               </div>
               <div class="col-lg-6">
-                <?php echo $this->db->get_where('perbaikan',array('status'=>NULL))->num_rows() ?>
+                <?php //echo $this->db->get_where('perbaikan',array('status'=>NULL))->num_rows() ?>
               </div>
             </div>
           </div>

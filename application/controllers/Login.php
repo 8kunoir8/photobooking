@@ -16,17 +16,15 @@ class Login extends CI_Controller {
 	public function login_check() {
 		$user = $this->input->post('username');
 		$pass = md5($this->input->post('password'));
+		//$pass = $this->input->post('password');
 		$param = array(
-			'username' => $user,
-			'password' => $pass
+			'nama' => $user,
+			'kata_sandi' => $pass
 		);
 		$check = $this->loginModel->checkLogin($param);
 		if($check->num_rows() >= 1){
 			$dataSession = array(
-				'fullname'	=> $check->first_row()->fullname,
-				'level'		=> $check->first_row()->level,
-				'status'	=> $check->first_row()->status,
-				'idAdmin'	=> $check->first_row()->idAdmin
+				'nama'	=> $check->first_row()->nama,
 			);
 			$this->session->set_userdata($dataSession);			
 		  	redirect(base_url('dashboard'));
@@ -35,7 +33,7 @@ class Login extends CI_Controller {
 			echo "<script>history.go(-1);</script>";
 		}
 
-		//$status =  $this->session->userdata('status');
+		$status =  $this->session->userdata('status');
 		//echo json_encode($status);
 	}
 

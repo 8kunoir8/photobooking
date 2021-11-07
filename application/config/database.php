@@ -5,11 +5,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_dinamo',
+	'dsn'	=> 'mysql://b9b320d048e18a:9109cefa@us-cdbr-east-04.cleardb.com/heroku_8507c88d62101cf?reconnect=true',
+	'hostname' => 'us-cdbr-east-04.cleardb.com',
+	'username' => 'b9b320d048e18a',
+	'password' => '9109cefa',
+	'database' => 'heroku_8507c88d62101cf',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -24,7 +24,7 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+); 
 
 $db['online'] = array(
 	'dsn'	=> '',
