@@ -9,9 +9,9 @@ class Home extends CI_Controller {
 		$this->load->library('Layout');
 		$this->load->library('upload');
 		$this->load->model('masterModel');
-		if($this->session->userdata('fullname') =='' || $this->session->userdata('fullname') == NULL){
-			redirect(base_url('login'));
-		}
+		// if($this->session->userdata('fullname') =='' || $this->session->userdata('fullname') == NULL){
+		// 	redirect(base_url('login'));
+		// }
 	}
 
 	public function index() {
