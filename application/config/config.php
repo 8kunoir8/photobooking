@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://hidi.hol.es/';
-$config['base_url'] = 'http://localhost/sistem_service_dinamo/';
+$config['base_url'] = 'https://photobooking.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ $config['base_url'] = 'http://localhost/sistem_service_dinamo/';
 |
 */
 //$config['index_page'] = 'http://hidi.hol.es/index';
-$config['index_page'] = 'http://localhost/sistem_service_dinamo/index';
+$config['index_page'] = 'https://photobooking.herokuapp.com//index';
 
 /*
 |--------------------------------------------------------------------------
