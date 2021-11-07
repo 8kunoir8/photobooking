@@ -5,7 +5,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> 'mysql://b9b320d048e18a:9109cefa@us-cdbr-east-04.cleardb.com/heroku_8507c88d62101cf?reconnect=true',
 	'hostname' => 'us-cdbr-east-04.cleardb.com',
 	'username' => 'b9b320d048e18a',
 	'password' => '9109cefa',
