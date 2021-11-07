@@ -15,8 +15,8 @@ class Login extends CI_Controller {
 
 	public function login_check() {
 		$user = $this->input->post('username');
-		//$pass = md5($this->input->post('password'));
-		$pass = $this->input->post('password');
+		$pass = md5($this->input->post('password'));
+		//$pass = $this->input->post('password');
 		$param = array(
 			'nama' => $user,
 			'kata_sandi' => $pass
