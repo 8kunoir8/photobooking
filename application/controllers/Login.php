@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		//$this->load->library('session');
+		$this->load->library('session');
 		$this->load->model('loginModel');
 	}
 
@@ -27,14 +27,14 @@ class Login extends CI_Controller {
 			$dataSession = array(
 				'nama'	=> $check->first_row()->nama,
 			);
-			//$this->session->set_userdata($dataSession);			
+			$this->session->set_userdata($dataSession);			
 		  	redirect(base_url('dashboard'));
 		}else{
 			echo "<script>alert('Username atau Password salah')</script>";
 			echo "<script>history.go(-1);</script>";
 		}
 
-		//$status =  $this->session->userdata('status');
+		$status =  $this->session->userdata('status');
 		//echo json_encode($status);
 	}
 
