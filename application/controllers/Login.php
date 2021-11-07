@@ -15,7 +15,8 @@ class Login extends CI_Controller {
 
 	public function login_check() {
 		$user = $this->input->post('username');
-		$pass = md5($this->input->post('password'));
+		//$pass = md5($this->input->post('password'));
+		$pass = $this->input->post('password');
 		$param = array(
 			'nama' => $user,
 			'kata_sandi' => $pass
@@ -25,7 +26,7 @@ class Login extends CI_Controller {
 			$dataSession = array(
 				'nama'	=> $check->first_row()->nama,
 			);
-			$this->session->set_userdata($dataSession);			
+			//$this->session->set_userdata($dataSession);			
 		  	redirect(base_url('dashboard'));
 		}else{
 			echo "<script>alert('Username atau Password salah')</script>";
