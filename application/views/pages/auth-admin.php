@@ -17,11 +17,8 @@
                       </tr>
                       <tr>
                         <th>No</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
+                        <th>Nama</th>
                         <th>Password</th>
-                        <th>Level</th>
-                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -29,14 +26,11 @@
                       <?php $i=1; foreach($content->result() as $con): ?>
                       <tr>
                         <td><?php echo $i++ ?></td>
-                        <td><?php echo $con->fullname ?></td>
-                        <td><?php echo $con->username ?></td>
-                        <td><?php echo $con->password ?></td>
-                        <td><?php echo $con->level ?></td>
-                        <td><?php echo $con->status ?></td>
+                        <td><?php echo $con->nama ?></td>
+                        <td><?php echo $con->kata_sandi ?></td>
                         <td align="center">
-                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->idAdmin ?>">Edit</a> 
-                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delAd').'/'.$con->idAdmin ?>">Delete</a>
+                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->id_admin ?>">Edit</a> 
+                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delAd').'/'.$con->id_admin ?>">Delete</a>
                         </td>
                       </tr>
                     <?php endforeach ?>
