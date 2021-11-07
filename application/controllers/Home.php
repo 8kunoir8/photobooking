@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->library('session');
+		//$this->load->library('session');
 		$this->load->library('Layout');
 		$this->load->library('upload');
 		$this->load->model('masterModel');
