@@ -22,6 +22,7 @@ class Login extends CI_Controller {
 			'kata_sandi' => $pass
 		);
 		$check = $this->loginModel->checkLogin($param);
+		alert($check);
 		if($check->num_rows() >= 1){
 			$dataSession = array(
 				'nama'	=> $check->first_row()->nama,
