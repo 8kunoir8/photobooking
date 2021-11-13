@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PD Pratama Teknik</title>
+    <title>ComProject</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,36 +60,6 @@
                     </ul-->
                     <!-- /.dropdown-user -->
                 </li>
-                <li class="dropdown" style="display: inline-block;">
-                    <a href="<?php echo base_url('Front/signUp') ?>">
-                        Pengajuan
-                    </a>
-                    <!--ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Kantor Cabang</a>
-                        </li>
-                            
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul-->
-                    <!-- /.dropdown-user -->
-                </li>
-                <li class="dropdown" style="display: inline-block;">
-                    <a href="<?php echo base_url('Front/katalog') ?>">
-                        Katalog
-                    </a>
-                    <!--ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Kantor Cabang</a>
-                        </li>
-                            
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul-->
-                    <!-- /.dropdown-user -->
-                </li>
                 
                 <li class="dropdown" style="display: inline-block;">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -127,7 +97,7 @@
                 <div class="col-lg-12">
                     <div class="intro-message" style="padding-top:100px">
                         <img src="<?php echo base_url() ?>uploads/logo.jpg" style="height:200px">
-                        <h3 style="color:#ffca28"><i>Sistem Service Dinamo</i></h3>
+                        <h3 style="color:#ffca28"><i>ComProject Photobooking</i></h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
