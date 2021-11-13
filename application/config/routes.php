@@ -21,6 +21,18 @@ $route['user'] = 'home/authUser';
 $route['newUs'] = 'home/newUser';
 $route['edUs/(:any)'] = 'home/editUser/$1';
 $route['delUs/(:any)'] = 'home/deleteUser/$1';
+//Paket
+$route['paket'] = 'home/masterPaket';
+$route['newPaket'] = 'home/newPaket';
+$route['edPaket/(:any)'] = 'home/editPaket/$1';
+$route['delPaket/(:any)'] = 'home/deletePaket/$1';
+//Photografer
+$route['photografer'] = 'home/masterPhotografer';
+$route['newPhogra'] = 'home/newPhotografer';
+$route['edPhogra/(:any)'] = 'home/editPhotografer/$1';
+$route['delPhogra/(:any)'] = 'home/deletePhotografer/$1';
+
+
 //Supplier
 $route['supplier'] = 'home/masterSupplier';
 $route['newSupp'] = 'home/newSupplier';
