@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 		$this->load->library('Layout');
 		$this->load->library('upload');
 		$this->load->model('masterModel');
-		if($this->session->userdata('fullname') =='' || $this->session->userdata('fullname') == NULL){
+		if($this->session->userdata('nama') =='' || $this->session->userdata('nama') == NULL){
 			redirect(base_url('login'));
 		}
 	}
