@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>PD Pratama Teknik</title>
+  <title>ComProject</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -52,7 +52,7 @@
         <img src="<?php echo base_url() ?>uploads/logo.jpg" alt="Electric Motor Workshop" style="height: 200px; width: 500px;">
       </div>
       <div class="row">
-        <h3><i>PD Pratama Teknik</i></h3>
+        <h3><i>ComProject PhotoBooking</i></h3>
       </div>
     </div>
     <div id="wrapper">
