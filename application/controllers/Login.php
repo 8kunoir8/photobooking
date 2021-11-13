@@ -26,8 +26,9 @@ class Login extends CI_Controller {
 			$dataSession = array(
 				'nama'	=> $check->first_row()->nama,
 			);
-			$this->session->set_userdata($dataSession);			
-		  	redirect(base_url('dashboard'));
+			$this->session->set_userdata($dataSession);
+			alert("berhasil login");			
+		  	//redirect(base_url('dashboard'));
 		}else{
 			echo "<script>alert('Username atau Password salah')</script>";
 			echo "<script>history.go(-1);</script>";
