@@ -28,11 +28,9 @@ class Home extends CI_Controller {
 
 	public function newAdmin(){
 		$insertData = array(
-				'idAdmin' => 0,
-				'username' => $this->input->post('username'),
-				'password' => md5($this->input->post('password')),
-				'fullname' => $this->input->post('fullname'),
-				'level'	=> $this->input->post('level')
+				'id_admin' => 0,
+				'nama' => $this->input->post('nama'),
+				'kata_sandi' => md5($this->input->post('kata_sandi'))
 			);
 			$insert = $this->masterModel->insert($insertData,'admin');
 			if($insert){
@@ -45,13 +43,11 @@ class Home extends CI_Controller {
 
 	public function editAdmin(){
 		$updateData = array(
-				'username' => $this->input->post('username'),
-				'password' => md5($this->input->post('password')),
-				'fullname' => $this->input->post('fullname'),
-				'level'	=> $this->input->post('level')
+			'nama' => $this->input->post('nama'),
+			'kata_sandi' => md5($this->input->post('kata_sandi'))
 		);
 		$id = array(
-			'idAdmin' => $this->uri->segment(2)
+			'id_admin' => $this->uri->segment(2)
 		);
 		$update = $this->masterModel->edit($updateData,'admin',$id);
 		if($update){
@@ -64,7 +60,7 @@ class Home extends CI_Controller {
 
 	public function deleteAdmin(){
 		$id = array(
-			'idAdmin' => $this->uri->segment(2)
+			'id_admin' => $this->uri->segment(2)
 		);
 		$delete = $this->db->delete('admin',$id);
 		if($delete){
