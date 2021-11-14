@@ -70,17 +70,12 @@
                   </li>
                   <li><a><i class="fa fa-tags"></i> Order <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url('catpart') ?>">Jenis Part</a></li>
-                      <li><a href="<?php echo base_url('type') ?>">Tipe Part</a></li>
                       <li><a href="<?php echo base_url('order') ?>">Daftar Pesanan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-exchange"></i> Transaction <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url('Home/masterEstimasi') ?>">Estimasi Kerusakan</a></li>
-                      <?php if($this->session->userdata('level')!=2){ ?>
-                      <li><a href="<?php echo base_url('Home/masterPerbaikan') ?>">Pengajuan Perbaikan</a></li>
-                      <?php } ?>
+                      <li><a href="<?php echo base_url('Home/masterEstimasi') ?>">Daftar Transaksi</a></li>
                     </ul>
                   </li>
                   <li>
