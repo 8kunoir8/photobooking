@@ -19,7 +19,6 @@ class Home extends CI_Controller {
 	}
 
 	//ADMIN
-
 	public function authAdmin(){
 		$content['title'] = 'Admin Authorization';
 		$data['content'] = $this->masterModel->listing('admin');
@@ -71,8 +70,7 @@ class Home extends CI_Controller {
 			}
 	}
 
-//USER
-
+	//USER
 	public function authUser(){
 		$content['title'] = 'User Authorization';
 		$data['content'] = $this->masterModel->listing('pelanggan');
@@ -129,109 +127,111 @@ class Home extends CI_Controller {
 	}
 
 
-	//SUPPLIER
-
-	public function masterSupplier(){
-		$content['title'] = 'Master Supplier';
-		$data['content'] = $this->masterModel->listing('supplier');
-		$this->layout->defaultPage('pages/master-supplier',$data,$content);
+	//PAKET
+	public function masterPaket(){
+		$content['title'] = 'Master Paket';
+		$data['content'] = $this->masterModel->listing('paket');
+		$this->layout->defaultPage('pages/master-paket',$data,$content);
 	}
 
-	public function newSupplier(){
+	public function newPaket(){
 		$insertData = array(
-				'idSupplier' => 0,
-				'namaSupplier' => $this->input->post('name'),
-				'alamatSupplier' => $this->input->post('address')
+				'id_paket' => 0,
+				'nama_paket' => $this->input->post('name'),
+				'kategori' => $this->input->post('kategori'),
+				'deskripsi' => $this->input->post('deskripsi'),
+				'harga' => $this->input->post('harga')
 			);
-			$insert = $this->masterModel->insert($insertData,'supplier');
+			$insert = $this->masterModel->insert($insertData,'paket');
 			if($insert){
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}else{
 				echo "<script>alert('Insert Failed !');</script>";
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}
 	}
 
-	public function editSupplier(){
+	public function editPaket(){
 		$updateData = array(
-			'namaSupplier' => $this->input->post('name'),
-			'alamatSupplier' => $this->input->post('address')
+				'nama_paket' => $this->input->post('name'),
+				'kategori' => $this->input->post('kategori'),
+				'deskripsi' => $this->input->post('deskripsi'),
+				'harga' => $this->input->post('harga')
 		);
 		$id = array(
-			'idSupplier' => $this->uri->segment(2)
+			'id_paket' => $this->uri->segment(2)
 		);
-		$update = $this->masterModel->edit($updateData,'supplier',$id);
+		$update = $this->masterModel->edit($updateData,'paket',$id);
 		if($update){
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}else{
 				echo "<script>alert('Update Failed !');</script>";
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}
 	}
 
-	public function deleteSupplier(){
+	public function deletePaket(){
 		$id = array(
-			'idSupplier' => $this->uri->segment(2)
+			'id_paket' => $this->uri->segment(2)
 		);
-		$delete = $this->db->delete('supplier',$id);
+		$delete = $this->db->delete('paket',$id);
 		if($delete){
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}else{
 				echo "<script>alert('Delete Failed !');</script>";
-				redirect(base_url('supplier'));
+				redirect(base_url('paket'));
 			}
 	}
 
-	//CATEGORY
-
-	public function masterCategory(){
-		$content['title'] = 'Master Category';
-		$data['content'] = $this->masterModel->listing('category');
-		$this->layout->defaultPage('pages/master-category',$data,$content);
+	//PHOTOGRAFER
+	public function masterPhotografer(){
+		$content['title'] = 'Master Photografer';
+		$data['content'] = $this->masterModel->listing('photografer');
+		$this->layout->defaultPage('pages/master-photografer',$data,$content);
 	}
 	
-	public function newCategory(){
+	public function newPhotografer(){
 		$insertData = array(
-				'idCategory' => 0,
-				'namaCategory' => $this->input->post('name'),
-				'keterangan' => $this->input->post('keterangan')
+				'id_photografer' => 0,
+				'nama_photografer' => $this->input->post('nama_photografer'),
+				'harga' => $this->input->post('harga')
 			);
-			$insert = $this->masterModel->insert($insertData,'category');
+			$insert = $this->masterModel->insert($insertData,'photografer');
 			if($insert){
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}else{
 				echo "<script>alert('Insert Failed !');</script>";
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}
 	}
 
-	public function editCategory(){
+	public function editPhotografer(){
 		$updateData = array(
-			'namaCategory' => $this->input->post('name'),
-			'keterangan' => $this->input->post('keterangan')
+			'nama_photografer' => $this->input->post('nama_photografer'),
+				'harga' => $this->input->post('harga')
 		);
 		$id = array(
-			'idCategory' => $this->uri->segment(2)
+			'id_photografer' => $this->uri->segment(2)
 		);
-		$update = $this->masterModel->edit($updateData,'category',$id);
+		$update = $this->masterModel->edit($updateData,'photografer',$id);
 		if($update){
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}else{
 				echo "<script>alert('Update Failed !');</script>";
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}
 	}
 
-	public function deleteCategory(){
+	public function deletePhotografer(){
 		$id = array(
-			'idCategory' => $this->uri->segment(2)
+			'id_photografer' => $this->uri->segment(2)
 		);
-		$delete = $this->db->delete('category',$id);
+		$delete = $this->db->delete('photografer',$id);
 		if($delete){
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}else{
 				echo "<script>alert('Delete Failed !');</script>";
-				redirect(base_url('category'));
+				redirect(base_url('photografer'));
 			}
 	}
 

@@ -64,8 +64,8 @@
                   </li>
                   <li><a><i class="fa fa-university"></i> Master <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url('category') ?>">Master Kategori</a></li>
-                      <li><a href="<?php echo base_url('jenis') ?>">Master Jenis</a></li>
+                      <li><a href="<?php echo base_url('paket') ?>">Master Paket</a></li>
+                      <li><a href="<?php echo base_url('photografer') ?>">Master Photografer</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tags"></i> Order <span class="fa fa-chevron-down"></span></a>
