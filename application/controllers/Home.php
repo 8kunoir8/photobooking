@@ -79,17 +79,17 @@ class Home extends CI_Controller {
 
 	public function authUser(){
 		$content['title'] = 'User Authorization';
-		$data['content'] = $this->masterModel->listing('user');
+		$data['content'] = $this->masterModel->listing('pelanggan');
 		$this->layout->defaultPage('pages/auth-user',$data,$content);
 	}
 
 	public function newUser(){
 		$insertData = array(
-				'idUser' => 0,
-				'username' => $this->input->post('username'),
-				'password' => md5($this->input->post('password')),
-				'fullname' => $this->input->post('fullname'),
-				'status'	=> $this->input->post('status')
+				'id_pelanggan' => 0,
+				'nama' => $this->input->post('nama'),
+				'kata_sandi' => md5($this->input->post('kata_sandi')),
+				'alamat' => $this->input->post('alamat'),
+				'no_hp'	=> $this->input->post('no_hp')
 			);
 			$insert = $this->masterModel->insert($insertData,'user');
 			if($insert){
@@ -102,16 +102,15 @@ class Home extends CI_Controller {
 
 	public function editUser(){
 		$updateData = array(
-				'username' => $this->input->post('name'),
-				'username' => $this->input->post('username'),
-				'password' => md5($this->input->post('password')),
-				'fullname' => $this->input->post('fullname'),
-				'status'	=> $this->input->post('status')
+			'nama' => $this->input->post('nama'),
+			'kata_sandi' => md5($this->input->post('kata_sandi')),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp'	=> $this->input->post('no_hp')
 		);
 		$id = array(
-			'idUser' => $this->uri->segment(2)
+			'id_pelanggan' => $this->uri->segment(2)
 		);
-		$update = $this->masterModel->edit($updateData,'user',$id);
+		$update = $this->masterModel->edit($updateData,'pelanggan',$id);
 		if($update){
 				redirect(base_url('user'));
 			}else{
@@ -122,9 +121,9 @@ class Home extends CI_Controller {
 
 	public function deleteUser(){
 		$id = array(
-			'idUser' => $this->uri->segment(2)
+			'id_pelanggan' => $this->uri->segment(2)
 		);
-		$delete = $this->db->delete('user',$id);
+		$delete = $this->db->delete('pelanggan',$id);
 		if($delete){
 				redirect(base_url('user'));
 			}else{

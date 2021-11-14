@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>PD Pratama Teknik</title>
+    <title>ComProject</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url() ?>asset/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -66,8 +66,6 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url('category') ?>">Master Kategori</a></li>
                       <li><a href="<?php echo base_url('jenis') ?>">Master Jenis</a></li>
-                      <li><a href="<?php echo base_url('rusak') ?>">Master Rusak</a></li>
-                      <li><a href="<?php echo base_url('part') ?>">Master Part</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tags"></i> Order <span class="fa fa-chevron-down"></span></a>

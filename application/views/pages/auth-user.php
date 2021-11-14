@@ -17,10 +17,10 @@
                       </tr>
                       <tr>
                         <th>No</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
+                        <th>Nama</th>
+                        <th>No HP</th>
                         <th>Password</th>
-                        <th>Status</th>
+                        <th>Alamat</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -28,13 +28,13 @@
                       <?php $i=1; foreach($content->result() as $con): ?>
                       <tr>
                         <td><?php echo $i++ ?></td>
-                        <td><?php echo $con->fullname ?></td>
-                        <td><?php echo $con->username ?></td>
-                        <td><?php echo $con->password ?></td>
-                        <td><?php echo $con->status ?></td>
+                        <td><?php echo $con->nama ?></td>
+                        <td><?php echo $con->no_hp ?></td>
+                        <td><?php echo $con->kata_sandi ?></td>
+                        <td><?php echo $con->alamat ?></td>
                         <td align="center">
-                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->idUser ?>">Edit</a> 
-                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delUs').'/'.$con->idUser ?>">Delete</a>
+                          <a class="btn btn-warning col-lg-4" href="#" class="btn btn-warning btn-lg" data-toggle="modal" data-target="<?php echo '#edit'.$con->id_pelanggan ?>">Edit</a> 
+                          <a class="btn btn-danger col-lg-4" href="<?php echo base_url('delUs').'/'.$con->id_pelanggan ?>">Delete</a>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -54,22 +54,28 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">New User</h4>
+                  <h4 class="modal-title">New Pelanggan</h4>
                 </div>
                 <div class="modal-body">
                   <form role="form" action="<?php echo base_url('newUs') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="fullname">Full Name : </label>
-                      <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Full Name" required="" />
+                      <label for="nama">Nama : </label>
+                      <input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required="" />
                     </div>
                     <div class="form-group">
-                      <label for="username">Username : </label>
-                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" required="" />
+                      <label for="password">Kata Sandi : </label>
+                      <input id="password" name="password" type="password" class="form-control" placeholder="Kata Sandi" required="" />
                     </div>
                     <div class="form-group">
-                      <label for="password">Password : </label>
-                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
+                      <label for="no_hp">No HP : </label>
+                      <input id="no_hp" name="no_hp" type="text" class="form-control" placeholder="No HP" required="" />
                     </div>
+                    <div class="form-group">
+                      <label for="alamat">Alamat : </label>
+                      <!-- <input id="alamat" name="alamat" type="text" class="form-control" placeholder="Alamat" required="" /> -->
+                      <textarea name="alamat" id="alamat" cols="30" rows="10" placeholder="Alamat"></textarea>
+                    </div>
+                    
                     <div class="form-group">
                       <button name="submit-newUs" id="submit-newUs" type="submit" class="btn btn-default submit">Submit</button>
                     </div>
@@ -85,29 +91,34 @@
 
           <!-- Edit -->
           <?php foreach($content->result() as $con): ?>
-          <div id="<?php echo 'edit'.$con->idUser ?>" class="modal fade" role="dialog">
+          <div id="<?php echo 'edit'.$con->id_pelanggan ?>" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Edit User</h4>
+                  <h4 class="modal-title">Edit Pelanggan</h4>
                 </div>
                 <div class="modal-body">
-                  <form role="form" action="<?php echo base_url('edUs').'/'.$con->idUser ?>" method="post">
-                    <div class="form-group">
-                      <label for="fullname">Full Name : </label>
-                      <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Full Name" required="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="username">Username : </label>
-                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" required="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password : </label>
-                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
-                    </div>
+                  <form role="form" action="<?php echo base_url('edUs').'/'.$con->id_pelanggan ?>" method="post">
+                      <div class="form-group">
+                        <label for="nama">Nama : </label>
+                        <input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required="" value="<?php echo $con->nama ?>" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Kata Sandi : </label>
+                        <input id="password" name="password" type="password" class="form-control" placeholder="Kata Sandi" required="" value="<?php echo $con->kata_sandi ?>" />
+                      </div>
+                      <div class="form-group">
+                        <label for="no_hp">No HP : </label>
+                        <input id="no_hp" name="no_hp" type="text" class="form-control" placeholder="No HP" required="" value="<?php echo $con->no_hp ?>" />
+                      </div>
+                      <div class="form-group">
+                        <label for="alamat">Alamat : </label>
+                        <!-- <input id="alamat" name="alamat" type="text" class="form-control" placeholder="Alamat" required="" /> -->
+                        <textarea name="alamat" id="alamat" cols="30" rows="10" placeholder="Alamat">value="<?php echo $con->alamat ?>"</textarea>
+                      </div>
                     <div class="form-group">
                       <button name="submit-edUs" id="submit-edUs" type="submit" class="btn btn-default submit">Submit</button>
                     </div>
