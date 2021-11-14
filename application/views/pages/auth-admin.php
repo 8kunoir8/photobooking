@@ -55,12 +55,12 @@
                 <div class="modal-body">
                   <form role="form" action="<?php echo base_url('newAd') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="username">Username : </label>
-                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" required="" />
+                      <label for="nama">Nama : </label>
+                      <input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required="" />
                     </div>
                     <div class="form-group">
-                      <label for="password">Password : </label>
-                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
+                      <label for="kata_sandi">Kata Sandi : </label>
+                      <input id="kata_sandi" name="kata_sandi" type="password" class="form-control" placeholder="Kata Sandi" required="" />
                     </div>
                     <div class="form-group">
                       <button name="submit-newAd" id="submit-newAd" type="submit" class="btn btn-default submit">Submit</button>
@@ -77,7 +77,7 @@
 
           <!-- Edit -->
           <?php foreach($content->result() as $con): ?>
-          <div id="<?php echo 'edit'.$con->idAdmin ?>" class="modal fade" role="dialog">
+          <div id="<?php echo 'edit'.$con->id_admin ?>" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
               <!-- Modal content-->
@@ -89,12 +89,12 @@
                 <div class="modal-body">
                   <form role="form" action="<?php echo base_url('edAd').'/'.$con->id_admin ?>" method="post">
                     <div class="form-group">
-                      <label for="username">Username : </label>
-                      <input id="username" name="username" type="text" class="form-control" placeholder="Username" value="<?php echo $con->nama ?>" required="" />
+                      <label for="nama">Nama : </label>
+                      <input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" value="<?php echo $con->nama ?>" required="" />
                     </div>
                     <div class="form-group">
-                      <label for="password">Password : </label>
-                      <input id="password" name="password" type="password" class="form-control" placeholder="Password" value="<?php echo md5($con->kata_sandi) ?>" required="" />
+                      <label for="kata_sandi">Kata Sandi : </label>
+                      <input id="kata_sandi" name="kata_sandi" type="password" class="form-control" placeholder="Kata Sandi" value="<?php echo md5($con->kata_sandi) ?>" required="" />
                     </div>
                     <div class="form-group">
                       <button name="submit-edAd" id="submit-edAd" type="submit" class="btn btn-default submit">Submit</button>
