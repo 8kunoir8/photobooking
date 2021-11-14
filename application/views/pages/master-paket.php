@@ -13,7 +13,7 @@
            <table id="datatable" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <td colspan='4' align="center"><a class="btn btn-success col-lg-12" href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#newSupplier">New</a></td>
+                        <td colspan='6' align="center"><a class="btn btn-success col-lg-12" href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#newSupplier">New</a></td>
                       </tr>
                       <tr>
                         <th>No</th>
